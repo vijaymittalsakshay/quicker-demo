@@ -3,14 +3,217 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+     <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    
+    <!--CSS File-->
+    <link href="project/style/main.css" rel="stylesheet"/>
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
     
+    <!--JS File-->
+    <script src="project/app/lib/everlive.all.min.js"></script>
+     <script src="project/app/lib/jquery.validate.js"></script>
+    <script src="project/app/app.js"></script>
+    <script src="project/app/postad.js"></script>
+    <script src="project/app/productData.js"></script>
+    
+    <style>
+        #home .km-content{background-color:#E6E6E6}
+        #postad1 .km-content{background-color:white}
+    </style>
+    <style>
+        .km-arrow-e:after,
+        .km-arrow-e:before
+        {
+            content: "\e013";
+        }
+    </style>
 </head>
 <body>
     
+    <!--Home-->
+    <div data-role="view" data-layout="my-layout" id="home" data-title="span" data-model="app.productService.viewModel">
+        <div data-role="header">
+            <div data-role="navbar" style="height:60px;background-color:white">
+                <a data-role="button" data-rel="drawer" href="#right-drawer" data-icon="share" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/set.png" style="width:30px;height:30px;"></a>
+                <span><img src="project/image/logo.jpg" style="width:100px;height:60px;"></span>
+                <a data-role="button" data-icon="search" data-align="right" style="background-color:white;border:0px;margin-right:-10px;"><img src="project/image/search.png" style="width:30px;height:30px;"></a>
+            </div>
+        </div>
+        
+        <div data-role="content">
+            <div style="width:98%;height:100px;margin:0px auto;">
+                <div style="width:98%;height:60px;margin:0px auto;margin-top:15px;background-color:white">
+                  
+                    <div style="width:98%;margin:0px auto;height:55px;">
+                       
+                       <div style="width:49%;float:left;margin-top:7px">
+                       	 <!--<p style="font-size:13px;margin-left:-1px;font-weight:bold">To Sell or Advertise</p>-->
+                            <img src="project/image/sell.png" style="width:90%;height:35px;margin-top:8px;margin-left:3px;"/>
+                       </div>
+                      
+                       <div style="width:48%;height:40px;float:right;margin-top:10px;margin-right:5px;background-color:#FFCC00">
+                       	 <!--<p style="font-size:18px;color:black;font-weight:bold;line-height:5px;margin-left:15px;">Post Free Ad</p>-->
+                           <a href="#postad1">
+                               <img src="project/image/postad.png" style="width:100%;height:40px;"/>
+                           </a> 
+                       </div>
+                       
+                   </div>
+                    
+                   <label>
+                       <h3 style="margin-left:1px;">Buy,Rent or Find</h3>
+                   </label>
+                    
+                    <div style="width:98%;height:60px;margin:0px auto;margin-top:-8px;">
+                        
+                        <!--1st row content div-->
+                       <div id="frow" style="width:100%;height:120px;">
+                            <div data-role="touch" style="width:33%;height:110px;margin-top:3px;float:left;background-image:url();background-size:;">
+                            	<a href="project/views/automobile.html">
+                                    <img src="project/image/car.jpg" style="width:99px;height:110px"/>
+                                </a>
+                        	</div>
+                       
+                            <div style="width:33%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
+                            	<img src="project/image/mob.png" style="width:99px;height:110px;"/>
+                        	</div>
+                           
+                            <div style="width:32%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
+                            	<img src="project/image/elect.png" style="width:99px;height:110px;"/>
+                        	</div>
+                           
+                       </div>
+                       
+                       <!--2nd row content div-->
+                       <div style="width:100%;height:120px;margin-top:-5px;">
+                            <div style="width:33%;height:110px;margin-top:3px;float:left;background-color:white">
+                            	<img src="project/image/edu.png" style="width:99px;height:110px;"/>
+                        	</div>
+                       
+                            <div style="width:33%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
+                            	<img src="project/image/ent.png" style="width:99px;height:110px;"/>
+                        	</div>
+                           
+                            <div style="width:32%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
+                            	<img src="project/image/job.png" style="width:99px;height:110px;"/>
+                        	</div>
+                           
+                       </div>
+                        
+                       <!--3rd row content div-->
+                       <div style="width:100%;height:120px;margin-top:-5px;">
+                            <div style="width:33%;height:110px;margin-top:3px;float:left;background-color:white">
+                            	<img src="project/image/lifestyle.png" style="width:99px;height:110px;"/>
+                        	</div>
+                       
+                            <div style="width:33%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
+                            	<img src="project/image/real.png" style="width:99px;height:110px;"/>
+                        	</div>
+                           
+                           <!-- <div style="width:32%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
+                            	<img src="project/image/car.jpg" style="width:99px;height:110px;"/>
+                        	</div>-->
+                           
+                       </div>
+                        
+                        <div style="width:100%;height:90px;margin-top:3px;">
+                            <div style="width:85%;">
+                                <h3 style="margin-left:1px;margin-top:12px;">Recommended for you</h3>
+                                
+                               
+                            </div>
+                            <div style="width:88%;float:left">
+                                <h5 style="margin-left:1px;margin-top:-12px;">
+                                    You don't have any alerts. create an alert by Clicking the icon on the right and get real time updates.
+                                </h5>
+                            </div>
+                             <div style="width:35px;height:35px;float:right;margin-top:-15px;">
+                                    <img src="project/image/bell.jpg" style="width:35px;height:35px;"/>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+   <!--Post ad view 1-->
+    <div data-role="view" id="postad1" data-title="1/2" data-model="app.postadService.viewModel" data-show="app.postadService.viewModel.show">
+        <div data-role="header">
+            <div data-role="navbar" style="height:60px;background-color:white;border-bottom:2px solid #0099FF">
+              <a data-role="backbutton" data-icon="search" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/back.png" style="width:30px;height:30px;"></a>
+                 <span style="line-height:60px;">Post Free Ad</span>
+                 <span data-role="view-title" data-align="right" style="line-height:60px;"></span>
+            </div>
+        </div>
+        
+        <div data-role="content">
+            <div style="width:96%;height:auto;margin:0px auto;margin-top:5px;">
+                <form id="postadfrm1">
+                    <div style="width:100%;height:auto;margin:0px auto;">
+                        <h3 style="color:#0099FF;">Ad image and Description</h3>
+                    	<div style="width:100%;height:110px;margin-top:-10px;">
+                            <div style="width:45%;height:100px;float:left;margin-left:8px;">
+                                <a href="void(0)">
+                                	<img src="project/image/cc.png" style="width:100%;height:100%;"/>
+                                </a>
+                            </div>
+                            <div style="width:52%;height:100px;float:left;">
+
+                            </div>
+                            <span style="line-height:30px;margin-left:10px;font-size:13px;">*Ads with images get 3 times more responses.</span>
+                        </div>
+                        <div style="width:100%;height:auto;margin-top:25px;">
+                            <p>
+                           	 <input type="text" name="adtitle" id="adtitle" class="txtbox" placeholder="Enter Ad Title (min 4 words)" required/>
+                            </p>
+                            <p>
+                           	 <textarea placeholder="Enter Detail Descriptions (min 8 words)" name="AdDescription" id="AdDescription" style="width:100%;height:110px;" required></textarea>
+                            </p>
+                        </div>
+                         <h3 style="color:#0099FF;margin-top:-13px;">Location</h3>
+                        <div style="width:100%;height:auto;margin-top:-10px;">
+                            <p>
+                           	 <input type="text" name="city" id="city" style="width:100%" orignal-title="City" required/>
+                            </p>
+                            <p>
+                           	 <input type="text" name="locality" id="locality" style="width:100%;display:none;" orignal-title="Locality"/>
+                            </p>
+                        </div>
+                        <div style="width:100%;height:auto;margin-top:20px;">
+                            <p>
+                           	 <input type="Submit" data-role="button" data-bind="click:postadSubmitFirst" value="Next" style="width:100%;height:45px;font-size:18px;font-weight:bold;background-color:#FFCC00"/>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!--Post ad view 2-->
+    <div data-role="view" id="postad2" data-title="2/2">
+        <div data-role="header">
+            <div data-role="navbar" style="height:60px;background-color:white;border-bottom:2px solid #0099FF">
+              <a data-role="backbutton" data-icon="search" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/back.png" style="width:30px;height:30px;"></a>
+                 <span style="line-height:60px;">Post Free Ad</span>
+                 <span data-role="view-title" data-align="right" style="line-height:60px;"></span>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+           
+        });
+    </script>
 </body>
 </html>
