@@ -5,7 +5,7 @@
     												{
                                                         layout:'my-layout',
                                                         skin:'flat',
-                                                        transition:'fade'
+                                                        transition:''
                                                     }
     									);
     

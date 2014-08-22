@@ -148,7 +148,7 @@
         <div data-role="header">
             <div data-role="navbar" style="height:60px;background-color:white;border-bottom:2px solid #0099FF">
               <a data-role="backbutton" data-icon="search" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/back.png" style="width:30px;height:30px;"></a>
-                 <span style="line-height:60px;">Post Free Ad</span>
+                 <span style="line-height:60px;" data-align="left">Post Free Ad</span>
                  <span data-role="view-title" data-align="right" style="line-height:60px;"></span>
             </div>
         </div>
@@ -177,13 +177,13 @@
                            	 <textarea placeholder="Enter Detail Descriptions (min 8 words)" name="AdDescription" id="AdDescription" style="width:100%;height:110px;" required></textarea>
                             </p>
                         </div>
-                         <h3 style="color:#0099FF;margin-top:-13px;">Location</h3>
+                         <h3 style="color:#0099FF;margin-top:-5px;">Location</h3>
                         <div style="width:100%;height:auto;margin-top:-10px;">
                             <p>
-                           	 <input type="text" name="city" id="city" style="width:100%" orignal-title="City" required/>
+                           	 <input name="city" id="city" style="width:100%" orignal-title="City" required/>
                             </p>
                             <p>
-                           	 <input type="text" name="locality" id="locality" style="width:100%;display:none;" orignal-title="Locality"/>
+                           	 <input name="locality" id="locality" style="width:100%;display:none;" orignal-title="Locality"/>
                             </p>
                         </div>
                         <div style="width:100%;height:auto;margin-top:20px;">
@@ -198,15 +198,83 @@
     </div>
     
     <!--Post ad view 2-->
-    <div data-role="view" id="postad2" data-title="2/2">
+    <div data-role="view" id="postad2" data-title="2/2" data-model="app.postadService.viewModel" data-show="app.postadService.viewModel.show">
         <div data-role="header">
             <div data-role="navbar" style="height:60px;background-color:white;border-bottom:2px solid #0099FF">
               <a data-role="backbutton" data-icon="search" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/back.png" style="width:30px;height:30px;"></a>
-                 <span style="line-height:60px;">Post Free Ad</span>
+                 <span style="line-height:60px;" data-align="left">Post Free Ad</span>
                  <span data-role="view-title" data-align="right" style="line-height:60px;"></span>
             </div>
-            
-            
+        </div>
+        <div data-role="content">
+            <div style="width:96%;height:auto;margin:0px auto;margin-top:5px;">
+                <form id="postadfrm1">
+                    <div style="width:100%;height:auto;margin:0px auto;">
+                        <h3 style="color:#0099FF;">Other Ad Details</h3>
+                    	<div style="width:100%;height:auto;margin-top:-10px;">
+                            <p>
+                           	 <input name="category" id="category" style="width:100%" orignal-title="Category" required/>
+                            </p>
+                            <p>
+                           	 <input name="subcategory" id="subcategory" style="width:100%;" orignal-title="Subcategory" required/>
+                            </p>
+                        </div>
+                        <div id="filterChoice" style="width:100%;height:auto;margin-top:25px;display:none">
+                            <p>
+                           	 <input type="radio" name="adradio" value="sell" id="adradio1" required/>
+                                <label style="font-size:14px;font-weight:bold;">I want to sell this Product</label>
+                            </p>
+                            <p>
+                           	 <input type="radio" name="adradio" value="buy" id="adradio2" required/>
+                                <label style="font-size:14px;font-weight:bold;">I want to Buy this Product</label>
+                            </p>
+                            <h5>You are</h5>
+                            <div style="margin-top:-7px;">
+                                <p>
+                               	 <input type="radio" name="userdetail" value="Individual" id="adradio1" required/>
+                                    <label style="font-size:14px;font-weight:bold;">Individual</label>
+                                </p>
+                                <p>
+                               	 <input type="radio" name="userdetail" value="Dealer" id="adradio2" required/>
+                                    <label style="font-size:14px;font-weight:bold;">Dealer</label>
+                                </p>
+                            </div>
+                            <h5>Condition</h5>
+                            <div style="margin-top:-7px;">
+                                <p>
+                               	 <input type="radio" name="condition" value="Used" id="adradio1" required/>
+                                    <label style="font-size:14px;font-weight:bold;">Used</label>
+                                </p>
+                                <p>
+                               	 <input type="radio" name="condition" value="New" id="adradio2" required/>
+                                    <label style="font-size:14px;font-weight:bold;">New</label>
+                                </p>
+                            </div>
+                            <p style="margin-top:20px;">
+                                <input name="brand" id="brand" style="width:100%;" orignal-title="Brand" required/>
+                            </p>
+                            <h5>Price</h5>
+                            <p style="margin-top:-15px;">
+                                <input type="text" name="adtitle" id="adtitle" class="txtbox" placeholder="Enter Price" required/>
+                            </p>
+                        </div>
+                         <h3 style="color:#0099FF;margin-top:5px;">Your Contact Information</h3>
+                        <div style="width:100%;height:auto;margin-top:-10px;">
+                            <p>
+                           	 <input type="email" name="email" id="email" class="txtbox" style="width:100%" orignal-title="Email Address" required/>
+                            </p>
+                            <p>
+                           	 <input type="number" name="mobile" id="mobile" style="width:100%;" class="txtbox" orignal-title="Mobile Number" required/>
+                            </p>
+                        </div>
+                        <div style="width:100%;height:auto;margin-top:20px;">
+                            <p>
+                           	 <input type="Submit" data-role="button" data-bind="click:postadSubmitSecond" value="Post your Ad" style="width:100%;height:45px;font-size:18px;font-weight:bold;background-color:#FFCC00"/>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     

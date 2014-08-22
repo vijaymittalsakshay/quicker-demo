@@ -23,7 +23,59 @@
                     app.postadService.viewModel.localityListView();
                 }
             });
-           
+            
+            //for category dropdownlist
+            $("#category").kendoDropDownList({
+                optionLabel: "Select Category",
+                dataTextField: "name",
+                dataValueField: "id",
+                dataSource: [
+                    { name: "Electronics", id: 1 },
+                    { name: "Mobile", id: 2 },
+                	{ name: "Entertainment", id: 3 },
+                    { name: "Sports", id: 4 }
+                    ],
+                index:0,
+                select:function(e){
+                  
+                }
+            });
+            
+            //for subcategory dropdownlist
+            $("#subcategory").kendoDropDownList({
+                optionLabel: "Select Sub Category",
+                cascadeFrom: "category",
+                cascadeFromField: "parentId",
+                dataTextField: "name",
+                dataValueField: "id",
+                dataSource: [
+                    { name: "Mp3 Player", id: 1, parentId: 1 },
+                    { name: "Samsung", id: 2, parentId: 2 },
+                	{ name: "Music", id: 3, parentId: 3 },
+                    { name: "Basket", id: 4, parentId: 4 }
+                    ],
+                index:0,
+                select:function(e){
+                  $("#filterChoice").show();
+                }
+            });
+            
+            //for subcategory dropdownlist
+            $("#brand").kendoDropDownList({
+                optionLabel: "Select Brand",
+                dataTextField: "name",
+                dataValueField: "id",
+                dataSource: [
+                    { name: "A", id: 1 },
+                    { name: "B", id: 2},
+                	{ name: "C", id: 3},
+                    { name: "D", id: 4}
+                    ],
+                index:0,
+                select:function(e){
+                  
+                }
+            });
             
             //validation for postad 1st form
             $("#postadfrm1").validate({
@@ -58,6 +110,8 @@
             
            
         },
+        
+        //Locality list view Function
         localityListView:function(data){
           //  var index = data;
              $("#locality").kendoDropDownList({
@@ -74,14 +128,37 @@
                 ]
             });
         },
-        validationField:function(){
-             var dropdownlist = $("#city").data("kendoDropDownList");
-            alert(dropdownlist.select());
+        
+        //dropdownlist validation function
+        dropDownvalidationField:function(){
+             var dropdownlist1 = $("#city").data("kendoDropDownList");
+             var dropdownlist2 = $("#locality").data("kendoDropDownList");
+          
+            if(dropdownlist1.select() === 0)
+            {
+               navigator.notification.alert("Please select City",function(){},"Notification","OK");
+                return false;
+            }
+            
+            if(dropdownlist2.select() === 0)
+            {
+                navigator.notification.alert("Please select Locality",function(){},"Notification","OK");
+                return false;
+            }
+            else
+            { 
+                app.postadService.viewModel.postadFirstFormData();
+            }
+        },
+        
+        //firstform data insert function
+        postadFirstFormData:function(){
+           
+            apps.navigate("#postad2");
         },
             
-       
+       //first form submit function
         postadSubmitFirst:function(){
-            
           var status= $("#postadfrm1").valid();
             
             if(status === false)
@@ -89,12 +166,17 @@
                 return false;
             }
             else
-            {
-               // apps.navigate("#postad2");
-               // app.postadService.viewModel.validationField();
-               
+            {  
+                app.postadService.viewModel.dropDownvalidationField();  
+                
             }
-       }
+           // app.postadService.viewModel.postadFirstFormData();  
+       },
+        
+       //Second form submit function
+        postadSubmitSecond:function(){
+            alert("Second Form");
+        }
            
     });
     
