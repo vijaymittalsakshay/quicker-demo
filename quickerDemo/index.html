@@ -36,55 +36,54 @@
 <body>
     
     <!--Home-->
-    <div data-role="view" data-layout="my-layout" id="home" data-title="span" data-model="app.productService.viewModel">
+    <div data-role="view" data-layout="my-layout" data-transition="slide:right" id="home" data-title="span" data-model="app.productService.viewModel">
         <div data-role="header">
-            <div data-role="navbar" style="height:60px;background-color:white">
-                <a data-role="button" data-rel="drawer" href="#right-drawer" data-icon="share" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/set.png" style="width:30px;height:30px;"></a>
-                <span><img src="project/image/logo.jpg" style="width:100px;height:60px;"></span>
-                <a data-role="button" data-icon="search" data-align="right" style="background-color:white;border:0px;margin-right:-10px;"><img src="project/image/search.png" style="width:30px;height:30px;"></a>
+            <div data-role="navbar" style="height:45px;background-color:white;border-bottom:2px solid #0099FF">
+                <a data-role="button" data-rel="drawer" href="#right-drawer" data-icon="share" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/set.png" style="width:22px;height:20px;"></a>
+                <span><img src="project/image/logo.jpg" style="width:75px;height:45px;"></span>
+                <a data-role="button" data-icon="search" data-align="right" style="background-color:white;border:0px;margin-right:-10px;margin-top:4px;"><img src="project/image/search.png" style="width:25px;height:25px;"></a>
             </div>
         </div>
         
-        <div data-role="content">
+        <div data-role="content" style="background-color:#E6E6E6">
             <div style="width:98%;height:100px;margin:0px auto;">
-                <div style="width:98%;height:60px;margin:0px auto;margin-top:15px;background-color:white">
-                  
-                    <div style="width:98%;margin:0px auto;height:55px;">
-                       
-                       <div style="width:49%;float:left;margin-top:7px">
+                
+                <div style="width:99%;height:auto;margin:0px auto;margin-top:15px;border:0px solid red">
+                    
+                   <div style="width:98%;margin:0px auto;height:50px;border:0px solid red;background-color:white;margin-bottom:-8px;">
+                       <div style="width:49%;float:left;margin-top:3px">
                        	 <!--<p style="font-size:13px;margin-left:-1px;font-weight:bold">To Sell or Advertise</p>-->
-                            <img src="project/image/sell.png" style="width:90%;height:35px;margin-top:8px;margin-left:3px;"/>
+                            <img src="project/image/sell.png" style="width:95%;height:30px;margin-top:9px;margin-left:5px;"/>
                        </div>
                       
-                       <div style="width:48%;height:40px;float:right;margin-top:10px;margin-right:5px;background-color:#FFCC00">
+                       <div style="width:48%;height:40px;float:right;margin-top:6px;margin-right:5px;">
                        	 <!--<p style="font-size:18px;color:black;font-weight:bold;line-height:5px;margin-left:15px;">Post Free Ad</p>-->
                            <a href="#postad1">
-                               <img src="project/image/postad.png" style="width:100%;height:40px;"/>
+                               <img src="project/image/postad.png" style="width:100%;height:38px;"/>
                            </a> 
                        </div>
-                       
                    </div>
-                    
+               
                    <label>
-                       <h3 style="margin-left:1px;">Buy,Rent or Find</h3>
+                       <h4 style="margin-left:3px;">Buy,Rent or Find</h4>
                    </label>
                     
-                    <div style="width:98%;height:60px;margin:0px auto;margin-top:-8px;">
+                    <div style="width:99%;height:auto;margin:0px auto;margin-top:-15px;border:0px solid red">
                         
                         <!--1st row content div-->
                        <div id="frow" style="width:100%;height:120px;">
                             <div data-role="touch" style="width:33%;height:110px;margin-top:3px;float:left;background-image:url();background-size:;">
-                            	<a href="project/views/automobile.html">
-                                    <img src="project/image/car.jpg" style="width:99px;height:110px"/>
+                            	<a>
+                                    <img src="project/image/car.jpg" style="width:100%;height:110px"/>
                                 </a>
                         	</div>
                        
                             <div style="width:33%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
-                            	<img src="project/image/mob.png" style="width:99px;height:110px;"/>
+                            	<img src="project/image/mob.png" style="width:100%;height:110px;"/>
                         	</div>
                            
                             <div style="width:32%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
-                            	<img src="project/image/elect.png" style="width:99px;height:110px;"/>
+                            	<img src="project/image/elect.png" style="width:100%;height:110px;"/>
                         	</div>
                            
                        </div>
@@ -92,15 +91,15 @@
                        <!--2nd row content div-->
                        <div style="width:100%;height:120px;margin-top:-5px;">
                             <div style="width:33%;height:110px;margin-top:3px;float:left;background-color:white">
-                            	<img src="project/image/edu.png" style="width:99px;height:110px;"/>
+                            	<img src="project/image/edu.png" style="width:100%;height:110px;"/>
                         	</div>
                        
                             <div style="width:33%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
-                            	<img src="project/image/ent.png" style="width:99px;height:110px;"/>
+                            	<img src="project/image/ent.png" style="width:100%;height:110px;"/>
                         	</div>
                            
                             <div style="width:32%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
-                            	<img src="project/image/job.png" style="width:99px;height:110px;"/>
+                            	<img src="project/image/job.png" style="width:100%;height:110px;"/>
                         	</div>
                            
                        </div>
@@ -108,11 +107,11 @@
                        <!--3rd row content div-->
                        <div style="width:100%;height:120px;margin-top:-5px;">
                             <div style="width:33%;height:110px;margin-top:3px;float:left;background-color:white">
-                            	<img src="project/image/lifestyle.png" style="width:99px;height:110px;"/>
+                            	<img src="project/image/lifestyle.png" style="width:100%;height:110px;"/>
                         	</div>
                        
                             <div style="width:33%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
-                            	<img src="project/image/real.png" style="width:99px;height:110px;"/>
+                            	<img src="project/image/real.png" style="width:100%;height:110px;"/>
                         	</div>
                            
                            <!-- <div style="width:32%;height:110px;margin-top:3px;margin-left:3px;float:left;background-color:white">
@@ -144,12 +143,12 @@
     
     
    <!--Post ad view 1-->
-    <div data-role="view" id="postad1" data-title="1/2" data-model="app.postadService.viewModel" data-show="app.postadService.viewModel.show">
+    <div data-role="view" id="postad1" data-title="1/2" data-transition="slide" data-model="app.postadService.viewModel" data-show="app.postadService.viewModel.show">
         <div data-role="header">
-            <div data-role="navbar" style="height:60px;background-color:white;border-bottom:2px solid #0099FF">
-              <a data-role="backbutton" data-icon="search" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/back.png" style="width:30px;height:30px;"></a>
-                 <span style="line-height:60px;" data-align="left">Post Free Ad</span>
-                 <span data-role="view-title" data-align="right" style="line-height:60px;"></span>
+            <div data-role="navbar" style="height:45px;background-color:white;border-bottom:2px solid #0099FF">
+              <a data-role="button" data-bind="click:backBTN" data-align="left" style="background-color:white;border:0px;margin-left:-10px;margin-top:5px;"><img src="project/image/back.png" style="width:22px;height:22px;"></a>
+                 <span style="line-height:20px;font-size:16px;" >Post Free Ad</span>
+                 <span data-role="view-title" data-align="right" style="line-height:50px;"></span>
             </div>
         </div>
         
@@ -158,37 +157,39 @@
                 <form id="postadfrm1">
                     <div style="width:100%;height:auto;margin:0px auto;">
                         <h3 style="color:#0099FF;">Ad image and Description</h3>
+                        
                     	<div style="width:100%;height:110px;margin-top:-10px;">
-                            <div style="width:45%;height:100px;float:left;margin-left:8px;">
-                                <a href="void(0)">
-                                	<img src="project/image/cc.png" style="width:100%;height:100%;"/>
+                            <div style="width:30%;height:100px;margin-left:8px;">
+                                <a data-role="button" data-bind="click:cameraCapture" style="width:100%;height:75px;background-image:url('project/image/cc.png');background-size:100% 100%;">
+                                	
                                 </a>
                             </div>
-                            <div style="width:52%;height:100px;float:left;">
-
+                            <div style="width:57%;height:100px;display:none">
+                                
                             </div>
-                            <span style="line-height:30px;margin-left:10px;font-size:13px;">*Ads with images get 3 times more responses.</span>
+                            <span style="line-height:0px;margin-left:10px;font-size:13px;">*Ads with images get 3 times more responses.</span>
                         </div>
+                        
                         <div style="width:100%;height:auto;margin-top:25px;">
                             <p>
                            	 <input type="text" name="adtitle" id="adtitle" class="txtbox" placeholder="Enter Ad Title (min 4 words)" required/>
                             </p>
                             <p>
-                           	 <textarea placeholder="Enter Detail Descriptions (min 8 words)" name="AdDescription" id="AdDescription" style="width:100%;height:110px;" required></textarea>
+                           	 <textarea placeholder="Enter Ad Descriptions (min 8 words)" name="AdDescription" id="AdDescription" style="" class="txtarea" required></textarea>
                             </p>
                         </div>
                          <h3 style="color:#0099FF;margin-top:-5px;">Location</h3>
                         <div style="width:100%;height:auto;margin-top:-10px;">
                             <p>
-                           	 <input name="city" id="city" style="width:100%" orignal-title="City" required/>
+                           	 <input name="state" id="state" style="width:100%" orignal-title="State" required/>
                             </p>
                             <p>
-                           	 <input name="locality" id="locality" style="width:100%;display:none;" orignal-title="Locality"/>
+                           	 <input name="city" id="city" style="width:100%;display:none;" orignal-title="City"/>
                             </p>
                         </div>
                         <div style="width:100%;height:auto;margin-top:20px;">
                             <p>
-                           	 <input type="Submit" data-role="button" data-bind="click:postadSubmitFirst" value="Next" style="width:100%;height:45px;font-size:18px;font-weight:bold;background-color:#FFCC00"/>
+                           	 <input type="Submit" data-role="button" data-bind="click:postadSubmitFirst" value="Next" style="width:100%;height:40px;font-size:18px;font-weight:bold;background-color:#FFCC00"/>
                             </p>
                         </div>
                     </div>
@@ -200,10 +201,10 @@
     <!--Post ad view 2-->
     <div data-role="view" id="postad2" data-title="2/2" data-model="app.postadService.viewModel" data-show="app.postadService.viewModel.show">
         <div data-role="header">
-            <div data-role="navbar" style="height:60px;background-color:white;border-bottom:2px solid #0099FF">
-              <a data-role="backbutton" data-icon="search" data-align="left" style="background-color:white;border:0px;margin-left:-10px;"><img src="project/image/back.png" style="width:30px;height:30px;"></a>
-                 <span style="line-height:60px;" data-align="left">Post Free Ad</span>
-                 <span data-role="view-title" data-align="right" style="line-height:60px;"></span>
+            <div data-role="navbar" style="height:45px;background-color:white;border-bottom:2px solid #0099FF">
+              <a data-role="backbutton" data-align="left" style="background-color:white;border:0px;margin-left:-10px;margin-top:5px;"><img src="project/image/back.png" style="width:22px;height:22px;"></a>
+                 <span style="line-height:20px;font-size:16px;" >Post Free Ad</span>
+                 <span data-role="view-title" data-align="right" style="line-height:50px;"></span>
             </div>
         </div>
         <div data-role="content">
@@ -219,7 +220,9 @@
                            	 <input name="subcategory" id="subcategory" style="width:100%;" orignal-title="Subcategory" required/>
                             </p>
                         </div>
-                        <div id="filterChoice" style="width:100%;height:auto;margin-top:25px;display:none">
+                        
+                        <!--cars Choice-->
+                        <div id="car_bikes" style="width:100%;height:auto;margin-top:25px;display:none">
                             <p>
                            	 <input type="radio" name="adradio" value="sell" id="adradio1" required/>
                                 <label style="font-size:14px;font-weight:bold;">I want to sell this Product</label>
@@ -250,14 +253,31 @@
                                     <label style="font-size:14px;font-weight:bold;">New</label>
                                 </p>
                             </div>
+                            <h5>Price</h5>
+                            <p style="margin-top:-15px;">
+                                <input type="number" name="adtitle" id="adtitle" class="txtbox" placeholder="Enter Price" required/>
+                            </p>
                             <p style="margin-top:20px;">
                                 <input name="brand" id="brand" style="width:100%;" orignal-title="Brand" required/>
                             </p>
-                            <h5>Price</h5>
+                            <p style="margin-top:20px;">
+                                <input name="year" id="year" style="width:100%;" orignal-title="Year" required/>
+                            </p>
+                            <h5>Kms Driven</h5>
                             <p style="margin-top:-15px;">
-                                <input type="text" name="adtitle" id="adtitle" class="txtbox" placeholder="Enter Price" required/>
+                                <input type="number" name="kms" id="kms" class="txtbox" placeholder="Enter Kms Driven" required/>
                             </p>
                         </div>
+                        
+                        <div id="color_fuelType" style="width:100%;height:auto;margin-top:25px;display:none">
+                            <p style="margin-top:20px;">
+                                <input name="color" id="color" style="width:100%;" orignal-title="Color" required/>
+                            </p>
+                            <p style="margin-top:20px;">
+                                <input name="fuelType" id="fuelType" style="width:100%;" orignal-title="Fuel type" required/>
+                            </p>
+                        </div>
+                        
                          <h3 style="color:#0099FF;margin-top:5px;">Your Contact Information</h3>
                         <div style="width:100%;height:auto;margin-top:-10px;">
                             <p>
@@ -267,9 +287,9 @@
                            	 <input type="number" name="mobile" id="mobile" style="width:100%;" class="txtbox" orignal-title="Mobile Number" required/>
                             </p>
                         </div>
-                        <div style="width:100%;height:auto;margin-top:20px;">
+                        <div style="width:100%;height:auto;margin-top:25px;">
                             <p>
-                           	 <input type="Submit" data-role="button" data-bind="click:postadSubmitSecond" value="Post your Ad" style="width:100%;height:45px;font-size:18px;font-weight:bold;background-color:#FFCC00"/>
+                           	 <input type="Submit" data-role="button" data-bind="click:postadSubmitSecond" value="Post your Ad" style="width:100%;height:40px;font-size:18px;font-weight:bold;background-color:#FFCC00"/>
                             </p>
                         </div>
                     </div>
@@ -277,11 +297,5 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        $(document).ready(function(){
-           
-        });
-    </script>
 </body>
 </html>

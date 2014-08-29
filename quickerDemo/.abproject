@@ -4,8 +4,8 @@
   "projectVersion": 1,
   "AppIdentifier": "com.telerik.quickerDemo",
   "DisplayName": "quickerDemo",
-  "Author": "",
-  "Description": "",
+  "Author": "Vijay Mittal",
+  "Description": "Sell the Product that you are need.",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -39,6 +39,7 @@
     "org.apache.cordova.network-information",
     "org.apache.cordova.dialogs",
     "org.apache.cordova.splashscreen",
+    "com.phonegap.plugins.sqlite",
     "org.apache.cordova.statusbar",
     "org.apache.cordova.vibration"
   ],
@@ -65,7 +66,7 @@
   "DeviceOrientations": [
     "Portrait"
   ],
-  "AndroidHardwareAcceleration": "false",
+  "AndroidHardwareAcceleration": "true",
   "iOSStatusBarStyle": "Default",
   "WP8SupportedResolutions": [
     "ID_RESOLUTION_WVGA",
