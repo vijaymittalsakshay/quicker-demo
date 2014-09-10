@@ -1,10 +1,10 @@
 (function(global){
-    var PostAdViewModel, dataParam={},that = this,
+    var PostadDataModal,
+    	dataParam={},
+    	that = this,
     	app = global.app = global.app || {};
     
-    
-    
-    PostAdViewModel = kendo.data.ObservableObject.extend({
+    PostadDataModal = kendo.data.ObservableObject.extend({
         
         adtitle:'',
         addescript:'',
@@ -17,9 +17,7 @@
         subcategory:0,
         hideVal:'',
         
-        afterShow:function(){
-            // app.postadService.viewModel.resetAllFields();
-        },
+        
         show:function(){
            // $("#postadDiv1").find(".km-scroll-container").css("-webkit-transform", "");
             
@@ -43,8 +41,6 @@
                     app.postadService.viewModel.localityListView(e);
                     $("#address").val("");
                     //$("#state").closest(".k-widget").hide();
-                    //alert("hi");
-                    //app.postadService.viewModel.testingFunction();
                 }
             });
             
@@ -63,7 +59,7 @@
                 },
                 index:0,
                 select:function(e){
-                         }
+                }
             });
             
            
@@ -285,227 +281,9 @@
             }
             
         },
-        
-        
-        dropDownvalidationFirstFormField:function(){			//dropdownlist validation function
-            
-             var dropdownlist1 = $("#state").data("kendoDropDownList");
-             var dropdownlist2 = $("#cityId").data("kendoDropDownList");
-          
-            if(dropdownlist1.select() === 0)
-            {
-               navigator.notification.alert("Please select State",function(){},"Notification","OK");
-                return false;
-            }
-            
-            if(dropdownlist2.select() === 0)
-            {
-                navigator.notification.alert("Please Select City",function(){},"Notification","OK");
-                return false;
-            }
-            else
-            { 
-                app.postadService.viewModel.postadFirstFormData();
-            }
-        },
-        
-        dropDownvalidationSecondFormField:function(){			//dropdownlist validation function
-            
-             var dropdownlist1 = $("#category").data("kendoDropDownList");
-             var dropdownlist2 = $("#subcategory").data("kendoDropDownList");
-          
-            if(dropdownlist1.select() === 0)
-            {
-               navigator.notification.alert("Please select Category",function(){},"Notification","OK");
-                return false;
-            }
-            
-            if(dropdownlist2.select() === 0)
-            {
-                navigator.notification.alert("Please Select Sub category",function(){},"Notification","OK");
-                return false;
-            }
-            else
-            { 
-                app.postadService.viewModel.postadSecondFormData();
-            }
-        },
-        
-        backBTN:function(){
-          navigator.notification.confirm("Would you like to cancel posting?",function(confirm){
-              if(confirm === 1 || confirm === '1')
-              {
-                  app.postadService.viewModel.resetAllFields();
-                  apps.navigate("#home");
-              }
-          },"Notification","Yes,No");  
-        },
-        
-        modalViewClose:function(){
-           $("#capturePhotoButton").data("kendoMobileModalView").close();  
-        },
-        
-        
-        cameraClick:function(){
-           app.postadService.viewModel.valueSet();
-        },
-        
-        destroy:function(e){
-            var totalImage = $("#imageVal").val();
-           //alert(e.target.id);
-            console.log(e);
-        },
-        
-         
-        postadFirstFormData:function(){  					//1st form submit function
-           
-           //apps.navigate("#postad2");
-           
-            var that = this;
-            dataParam['adtitle'] =that.get("adtitle").trim();
-            dataParam['addescript'] =that.get("addescript").trim();
-            dataParam['state'] =that.get("state");
-            dataParam['city'] =that.get("city");
-            dataParam['address'] =that.get("address").trim();
-            dataParam['imageSrc'] = $("#smallImage").attr('src');
-            console.log(dataParam);
-            apps.navigate("#postad2");
-        },
-        
-        postadSecondFormData:function(){  					//1st form submit function
-           
-           //apps.navigate("#postad2");
-           
-            var status = $("#postadfrm2").valid();
-            if(status === false)
-            {
-                return false;
-            }
-            else
-            {
-                var that = this;
-            dataParam['name']=that.get("name");
-            dataParam['category'] =that.get("category");
-            dataParam['subcategory'] =that.get("subcategory");
-            dataParam['email'] =that.get("email").trim();
-            dataParam['mobile'] =that.get("mobileNumber");
-            console.log(dataParam);
-            //apps.navigate("#postad2");
-            }
-        }, 
-       
-        postadSubmitFirst:function(){						//first form submit function
-         var status= $("#postadfrm1").valid();
-            
-            if(status === false)
-            {
-                return false;
-            }
-            else
-            {  
-                app.postadService.viewModel.dropDownvalidationFirstFormField();  
-            }
-          //  app.postadService.viewModel.dropDownvalidationFirstFormField();  
-          //  apps.navigate("#postad2");
-            
-           // var dd = $("#state").data("kendoDropDownList");
-           // console.log(dd.text());
-       },
-       
-        postadSubmitSecond:function(){					//Second form submit function
-            
-          //  var status= $("#postadfrm2").valid();
-            var dd = $("#postformsecond").click();
-            
-            if(dd)
-            {
-                 app.postadService.viewModel.dropDownvalidationSecondFormField();  
-            }
-        },
-        
-        
-        resetAllFields:function(){
-            var that = this;
-            
-            that.set("adtitle","");
-            that.set("addescript","");
-            that.set("state",0);
-            that.set("city",0);
-            that.set("address","");
-            that.set("email","");
-            that.set("mobileNumber","");
-            that.set("category","");
-            that.set("subcategory","");
-            that.set("name","");
-            $('input.error').css({"background-color":"white","border":"1px solid #B2B2B2"});
-            $('label.error').css("display","none");
-            $('textarea.error').css({"background-color":"white","border":"1px solid #B2B2B2"}); 
-            $("#cityId").closest(".k-widget").css("display","none");
-            $("#address").css("display","none");
-			$('.km-content:visible').data('kendoMobileScroller').reset();
-            $('#picture').css('display','none');
-        },
-        
-        
-        testingFunction:function(e){
-            
-           /* console.log(e.sender.element.context.id);
-            var data = el.data('categoryList');
-            data.get()
-                .then(function(data){
-                    console.log(data);
-                    var a = JSON.stringify(data);
-                    console.log(a);
-                    
-                    for(var i=0;i<data['count'];i++)
-                    {
-                      val = data['result'][i]['List'];  
-                    }
-                    console.log("value "+val);
-                    console.log(data['result'][0]['List']);
-                    console.log(data['count']);
-                    console.log("Id:"+data['result'][0]['Id']);
-                },
-                function(error){
-                    console.log(JSON.stringify(error));
-                });
-           
-            $("#ddl").kendoDropDownList({
-                        placeholder: "Choose City",
-                        dataTextField: "List",
-                        dataValueField: "Id",
-                        dataSource:data['result'],
-                        select:function(){
-                            $("#address").show();
-                        }
-                   });
-          
-            
-    var dataSource = new kendo.data.DataSource({
-    data: [
-    { name: "Jane Doe", age: 30 },
-    { name: "John Doe", age: 33 }
-    ]
-    });
-    dataSource.fetch(function(){
-    var janeDoe = dataSource.at(0);
-    console.log(janeDoe.name); // displays "Jane Doe"
-    });*/
-            
-            
-        },
-        
-        setValue:function(val){
-            var a = this.get("hideVal");
-            console.log("before"+a);
-            this.set("hideVal",val);
-            a = this.get("hideVal");
-            console.log("after"+a);
-        }
-        
     });
     
     app.postadService = {
-      viewModel : new PostAdViewModel()  
+      viewModel : new PostadDataModal()  
     };
 })(window);

@@ -12,14 +12,13 @@
 	{"stateId":8,"stateName":"Rajsthan"},
 	{"stateId":9,"stateName":"Madhyay Pradesh"},
 	{"stateId":10,"stateName":"Maharashtra"},
-	{"stateId":11,"stateName":"Odisha"}
+	{"stateId":11,"stateName":"Odisha"},
 	{"stateId":12,"stateName":"Punjab"},
 	{"stateId":13,"stateName":"Telangana"},
 	{"stateId":14,"stateName":"Tamil Nadu"},
 	{"stateId":1,"stateName":"Uttar Pradesh"},
 	{"stateId":16,"stateName":"Utrakhand"},
 	{"stateId":17,"stateName":"Karnataka"},
-	{"stateId":18,"stateName":"West Bengal"},
-
+	{"stateId":18,"stateName":"West Bengal"}
 ]
  
