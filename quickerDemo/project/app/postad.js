@@ -352,8 +352,12 @@
         
         destroy:function(e){
             var totalImage = $("#imageVal").val();
-           //alert(e.target.id);
-            console.log(e);
+            alert(totalImage);
+            //console.log(e.target.parentNode.id);
+            $("#"+e.target.parentNode.id).remove();
+            var index = --totalImage;
+            alert("remaining image"+index);
+           this.set("hideVal",index);
         },
         
          

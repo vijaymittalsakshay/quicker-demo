@@ -118,7 +118,8 @@
         
         _onPhotoDataSuccess: function(imageData) {
             var index = $('#imageVal').val();
-            if(index === 'undefined' || index === '')
+           // alert("value on "index);
+            if(index === 'undefined' || index === '' || index === 0)
             {
                 index=0;
             }
